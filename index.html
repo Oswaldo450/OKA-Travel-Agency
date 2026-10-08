@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aussie Wonders - Interactive Travel</title>
+  <title>KODA Escapes - The Perfect Getaway</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,39 +29,81 @@
       line-height: 1.6;
     }
 
-    /* Header & Hero */
+    /* Navigation */
+    nav {
+      background-color: var(--dark);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: #fff;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Hero Section */
     header {
-      background: linear-gradient(rgba(3, 4, 94, 0.75), rgba(0, 119, 182, 0.75)),
+      background: linear-gradient(rgba(3, 4, 94, 0.78), rgba(0, 119, 182, 0.78)),
                   url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 4.5rem 1.5rem;
+      padding: 5rem 1.5rem;
     }
 
     .badge {
       display: inline-block;
       background: var(--secondary);
       color: var(--dark);
-      padding: 0.35rem 1rem;
+      padding: 0.35rem 1.1rem;
       border-radius: 50px;
       font-weight: 600;
       font-size: 0.85rem;
       margin-bottom: 1rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    header h2 {
+      font-size: 2.6rem;
       margin-bottom: 0.8rem;
     }
 
-    /* Container */
+    header p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #f1f5f9;
+    }
+
+    /* Main Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 3rem 1.5rem;
     }
 
-    /* Tabs Navigation */
+    /* Tabs Bar */
     .tabs-nav {
       display: flex;
       justify-content: center;
@@ -75,7 +118,7 @@
       color: var(--primary);
       padding: 0.75rem 1.4rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.25s ease;
@@ -97,7 +140,7 @@
       border-color: #020336;
     }
 
-    /* Tab Content Sections */
+    /* Tab Content Handling */
     .tab-content {
       display: none;
       animation: fadeIn 0.3s ease;
@@ -112,7 +155,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Package Cards */
+    /* Package Cards Layout */
     .package-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,12 +175,12 @@
 
     .pkg-card h3 {
       color: var(--dark);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
     }
 
     .pkg-price {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: var(--primary);
       margin: 0.8rem 0;
@@ -154,11 +197,11 @@
       font-size: 0.95rem;
     }
 
-    /* Interactive Builder */
+    /* Builder Interface */
     .builder-container {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 2.5rem;
+      padding: 2.2rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
@@ -208,7 +251,7 @@
       font-size: 0.9rem;
     }
 
-    /* Summary Output */
+    /* Summary Box */
     .custom-summary {
       background: var(--light);
       border-radius: 10px;
@@ -223,13 +266,13 @@
       margin-bottom: 0.8rem;
     }
 
-    /* Advice & Modals */
+    /* Guidelines / Modals Box */
     .advice-box {
       background: #f0fdf4;
       border-left: 5px solid #22c55e;
-      padding: 1.2rem;
-      border-radius: 6px;
-      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 3rem;
     }
 
     footer {
@@ -239,170 +282,186 @@
       padding: 2.5rem 1.5rem;
       margin-top: 4rem;
     }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+  <nav>
+    <h1>KODA ESCAPES</h1>
+    <ul>
+      <li><a href="#packages">Tour Packages</a></li>
+      <li><a href="#custom">Custom Builder</a></li>
+      <li><a href="#guidelines">Travel Guidelines</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <header>
-    <span class="badge">UVM Languages • Final Project</span>
-    <h1>Australia: The Perfect Getaway</h1>
-    <p>Explore pre-designed packages or customize your dream Australian itinerary!</p>
+    <span class="badge">The Perfect Getaway • Travel Expo Pitch</span>
+    <h2>Australia: The Coastal Glow Expedition</h2>
+    <p>Curated by KODA Escapes. Experience Sydney's premier architectural icons and the natural bioluminescent beaches of Jervis Bay.</p>
   </header>
 
   <main class="container">
 
-    <!-- Navigation Tabs -->
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="openTab('pkg-all')">All Pre-set Packages</button>
-      <button class="tab-btn" onclick="openTab('pkg-1')">Package 1: Express Sydney</button>
-      <button class="tab-btn" onclick="openTab('pkg-2')">Package 2: Glow Coast</button>
-      <button class="tab-btn" onclick="openTab('pkg-3')">Package 3: Full Expedition</button>
-      <button class="tab-btn custom-btn" onclick="openTab('custom-builder')">✨ Choose Activities (Custom)</button>
+    <!-- Interactive Navigation Tabs -->
+    <div class="tabs-nav" id="packages">
+      <button class="tab-btn active" onclick="openTab('pkg-all', event)">All Packages</button>
+      <button class="tab-btn" onclick="openTab('pkg-1', event)">Package 1: Express Sydney</button>
+      <button class="tab-btn" onclick="openTab('pkg-2', event)">Package 2: Jervis Glow Coast</button>
+      <button class="tab-btn" onclick="openTab('pkg-3', event)">Package 3: Grand Explorer</button>
+      <button class="tab-btn custom-btn" onclick="openTab('custom-builder', event)">✨ Build Custom Itinerary</button>
     </div>
 
-    <!-- TAB: ALL PACKAGES OVERVIEW -->
+    <!-- TAB: ALL PACKAGES -->
     <section id="pkg-all" class="tab-content active">
       <div class="package-grid">
+        
         <!-- Package 1 -->
         <div class="pkg-card">
           <div>
             <h3>Package 1: Express Sydney</h3>
-            <p style="color: #64748b; font-size: 0.9rem;">3 Days / 2 Nights</p>
+            <p style="color: #64748b; font-size: 0.85rem;">3 Days / 2 Nights</p>
             <div class="pkg-price">$850 AUD</div>
             <ul>
               <li>✓ Return airport shuttle transfer</li>
-              <li>✓ 4-star harbour hotel lodging</li>
-              <li>✓ Guided Sydney Opera House & Harbour tour</li>
-              <li>✓ Bondi Beach walking tour</li>
+              <li>✓ 4-star Harbour Grand lodging</li>
+              <li>✓ Guided Sydney Opera House & Rocks tour</li>
+              <li>✓ Scenic Bondi to Coogee coastal walk</li>
             </ul>
           </div>
-          <p><strong>Note:</strong> If you select this package, you will experience the iconic urban sights of Australia.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>Agency Note:</strong> If you choose this option, you will enjoy a compact and modern Australian city experience without flight layovers.</p>
         </div>
 
         <!-- Package 2 -->
         <div class="pkg-card">
           <div>
-            <h3>Package 2: Jervis Bay Glow</h3>
-            <p style="color: #64748b; font-size: 0.9rem;">4 Days / 3 Nights</p>
+            <h3>Package 2: Jervis Glow Coast</h3>
+            <p style="color: #64748b; font-size: 0.85rem;">4 Days / 3 Nights</p>
             <div class="pkg-price">$1,350 AUD</div>
             <ul>
-              <li>✓ Return coach transport from Sydney</li>
-              <li>✓ Booderee Eco-Lodge full-board stay</li>
-              <li>✓ Hyams Beach white-sand excursion</li>
-              <li>✓ Night guided bioluminescence tour</li>
+              <li>✓ Private coach from Sydney across Grand Pacific Drive</li>
+              <li>✓ Full-board stay at Booderee Eco-Lodge</li>
+              <li>✓ Hyams Beach pure-sand excursion</li>
+              <li>✓ Guided bioluminescent night bay walk</li>
             </ul>
           </div>
-          <p><strong>Note:</strong> If conditions are clear, you will see the turquoise waves glow at night!</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>Agency Note:</strong> If the weather is warm and dark, you will witness the waves glow with vivid electric-blue light.</p>
         </div>
 
         <!-- Package 3 -->
         <div class="pkg-card">
           <div>
             <h3>Package 3: Grand Explorer</h3>
-            <p style="color: #64748b; font-size: 0.9rem;">6 Days / 5 Nights</p>
+            <p style="color: #64748b; font-size: 0.85rem;">6 Days / 5 Nights</p>
             <div class="pkg-price">$2,100 AUD</div>
             <ul>
-              <li>✓ Comprehensive all-inclusive flights & shuttles</li>
-              <li>✓ 5-star hotel and coastal lodge lodging</li>
-              <li>✓ Dolphin catamaran cruise in Jervis Bay</li>
-              <li>✓ Night bioluminescence & wildlife walk</li>
+              <li>✓ Full luxury accommodation (Sydney + Jervis Bay)</li>
+              <li>✓ Dolphin and seal catamaran cruise</li>
+              <li>✓ Bioluminescent tour with a marine biologist</li>
+              <li>✓ Gourmet farewell Australian seafood dinner</li>
             </ul>
           </div>
-          <p><strong>Note:</strong> You must carry a valid visa; everything else is covered by our travel agency.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>Agency Note:</strong> This all-inclusive deal features every premium transfer and priority tour booking.</p>
         </div>
+
       </div>
     </section>
 
     <!-- TAB: PACKAGE 1 DETAILS -->
     <section id="pkg-1" class="tab-content">
       <div class="pkg-card">
-        <h3>Package 1 Detailed Itinerary (3 Days)</h3>
-        <p><strong>Day 1:</strong> First, you are arriving at Sydney Airport. Our private driver will greet you for hotel check-in.</p>
-        <p><strong>Day 2:</strong> Subsequently, you are joining an architectural guided tour inside the Sydney Opera House.</p>
-        <p><strong>Day 3:</strong> Finally, you will take the coastal trail from Coogee to Bondi Beach before your evening flight layover.</p>
+        <h3>Package 1 Detailed Itinerary (3-Day Schedule)</h3>
+        <p style="margin-top: 0.6rem;"><strong>Day 1:</strong> First, you are landing at Sydney Kingsford Smith Airport. Our shuttle is taking you directly to your 4-star hotel for express check-in.</p>
+        <p style="margin-top: 0.6rem;"><strong>Day 2:</strong> Subsequently, our travel guide will lead an insightful tour around the Sydney Opera House and the historic Rocks district.</p>
+        <p style="margin-top: 0.6rem;"><strong>Day 3:</strong> Finally, you are visiting Bondi Beach for leisure before your evening departure.</p>
       </div>
     </section>
 
     <!-- TAB: PACKAGE 2 DETAILS -->
     <section id="pkg-2" class="tab-content">
       <div class="pkg-card">
-        <h3>Package 2 Detailed Itinerary (4 Days)</h3>
-        <p><strong>Day 1:</strong> First, we are departing from Sydney towards Jervis Bay along the Grand Pacific Drive.</p>
-        <p><strong>Day 2:</strong> After that, you are checking into Booderee Eco-Lodge and relaxing on Hyams Beach's white sands.</p>
-        <p><strong>Day 3:</strong> In the evening, our marine biologist is leading a night excursion to spot bioluminescent waters.</p>
-        <p><strong>Day 4:</strong> Finally, our shuttle is transporting you back to Sydney Airport.</p>
+        <h3>Package 2 Detailed Itinerary (4-Day Schedule)</h3>
+        <p style="margin-top: 0.6rem;"><strong>Day 1:</strong> First, we are departing Sydney via the scenic Grand Pacific Drive towards Jervis Bay.</p>
+        <p style="margin-top: 0.6rem;"><strong>Day 2:</strong> After that, you are checking into Booderee Eco-Lodge. In the afternoon, you could relax at Hyams Beach.</p>
+        <p style="margin-top: 0.6rem;"><strong>Day 3:</strong> In the evening, our marine specialist is leading our signature night walk to observe bioluminescent waters in Blenheim Beach.</p>
+        <p style="margin-top: 0.6rem;"><strong>Day 4:</strong> Finally, our coach is transporting guests back to Sydney Airport.</p>
       </div>
     </section>
 
     <!-- TAB: PACKAGE 3 DETAILS -->
     <section id="pkg-3" class="tab-content">
       <div class="pkg-card">
-        <h3>Package 3 Detailed Itinerary (6 Days)</h3>
-        <p><strong>Days 1-2:</strong> First, you will spend two nights in luxury Sydney accommodation experiencing guided city highlights.</p>
-        <p><strong>Days 3-4:</strong> Subsequently, we are travelling south to Jervis Bay for a marine cruise searching for wild dolphins.</p>
-        <p><strong>Days 5-6:</strong> Finally, you could experience the glowing night beach tour, followed by a farewell seafood dinner.</p>
+        <h3>Package 3 Detailed Itinerary (6-Day Schedule)</h3>
+        <p style="margin-top: 0.6rem;"><strong>Days 1-2:</strong> First, you will stay two nights in Sydney, taking guided architectural tours and scenic bay ferry rides.</p>
+        <p style="margin-top: 0.6rem;"><strong>Days 3-4:</strong> Subsequently, we are travelling to Jervis Bay for an open catamaran cruise to encounter resident dolphins and seabirds.</p>
+        <p style="margin-top: 0.6rem;"><strong>Days 5-6:</strong> Finally, you will explore the glowing coast at night and conclude with an exclusive coastal dinner.</p>
       </div>
     </section>
 
-    <!-- TAB: INTERACTIVE CUSTOM BUILDER -->
+    <!-- TAB: INTERACTIVE BUILDER -->
     <section id="custom-builder" class="tab-content">
-      <div class="builder-container">
-        <h2 style="color: var(--dark); margin-bottom: 0.5rem;">Build Your Custom Vacation Package</h2>
-        <p style="color: #64748b;">Select the activities and services you wish to include. We will calculate the total and generate your personalized schedule.</p>
+      <div class="builder-container" id="custom">
+        <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 0.3rem;">Interactive Itinerary Builder</h3>
+        <p style="color: #64748b;">Select your preferred activities. KODA Escapes will calculate your custom quote and compile your schedule:</p>
 
-        <!-- Activities Checkboxes -->
         <div class="activity-list">
-          
+
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="120" data-name="Guided Sydney Opera House Tour" data-day="Day 1" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="120" data-name="Sydney Opera House Guided Excursion" data-day="Day 1" onchange="calculateCustom()">
             <div class="activity-info">
-              <h4>Sydney Opera House Guided Tour</h4>
-              <p>Explore the architecture with a certified historian.</p>
+              <h4>Sydney Opera House Guided Excursion</h4>
+              <p>Certified historical walkthrough inside both main theatres.</p>
               <span class="price-tag">$120 AUD</span>
             </div>
           </label>
 
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="95" data-name="Bondi to Coogee Coastal Walk" data-day="Day 1" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="95" data-name="Bondi Coastal Cliff Walk" data-day="Day 1" onchange="calculateCustom()">
             <div class="activity-info">
-              <h4>Bondi to Coogee Coastal Walk</h4>
-              <p>Panoramic ocean cliffs and swimming at Gordon's Bay.</p>
+              <h4>Bondi Coastal Cliff Walk</h4>
+              <p>Stunning coastal paths and safe ocean pool swimming.</p>
               <span class="price-tag">$95 AUD</span>
             </div>
           </label>
 
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="180" data-name="Scenic Coach to Jervis Bay" data-day="Day 2" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="180" data-name="Scenic Coach Transfer to Jervis Bay" data-day="Day 2" onchange="calculateCustom()">
             <div class="activity-info">
               <h4>Scenic Coach Transfer to Jervis Bay</h4>
-              <p>Comfortable express coach across the Grand Pacific Drive.</p>
+              <p>Comfortable ride through Sea Cliff Bridge and rainforest tracks.</p>
               <span class="price-tag">$180 AUD</span>
             </div>
           </label>
 
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="150" data-name="Bioluminescent Night Beach Walk" data-day="Day 2" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="150" data-name="Night Bioluminescent Shore Expedition" data-day="Day 2" onchange="calculateCustom()">
             <div class="activity-info">
-              <h4>Bioluminescent Night Beach Walk</h4>
-              <p>Witness the blue glowing plankton and sand in Blenheim Beach.</p>
+              <h4>Night Bioluminescent Shore Expedition</h4>
+              <p>Stroll across glowing wet sands led by our marine biologist.</p>
               <span class="price-tag">$150 AUD</span>
             </div>
           </label>
 
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="130" data-name="Dolphin & Seal Watching Catamaran Cruise" data-day="Day 3" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="130" data-name="Dolphin & Seal Catamaran Cruise" data-day="Day 3" onchange="calculateCustom()">
             <div class="activity-info">
-              <h4>Dolphin & Seal Watching Cruise</h4>
-              <p>2-hour catamaran cruise inside Jervis Bay Marine Park.</p>
+              <h4>Dolphin & Seal Catamaran Cruise</h4>
+              <p>2-hour scenic boat cruise across pristine marine protected waters.</p>
               <span class="price-tag">$130 AUD</span>
             </div>
           </label>
 
           <label class="activity-card">
-            <input type="checkbox" class="act-check" value="250" data-name="Booderee Eco-Lodge Night Stay" data-day="Day 2" onchange="calculateCustom()">
+            <input type="checkbox" class="act-check" value="250" data-name="Booderee Eco-Lodge Lodging (1 Night)" data-day="Day 2" onchange="calculateCustom()">
             <div class="activity-info">
-              <h4>Booderee Eco-Lodge Stay (1 Night)</h4>
-              <p>Full-board sustainable lodging surrounded by kangaroos.</p>
+              <h4>Booderee Eco-Lodge Lodging (1 Night)</h4>
+              <p>Full-board sustainable lodging surrounded by native flora and fauna.</p>
               <span class="price-tag">$250 AUD</span>
             </div>
           </label>
@@ -413,32 +472,33 @@
         <div class="custom-summary">
           <div class="summary-total">Total Price: <span id="total-price">$0 AUD</span></div>
           <div id="summary-itinerary">
-            <p><em>No activities selected yet. Please check one or more boxes above to generate your custom itinerary.</em></p>
+            <p><em>No activities selected yet. Please check one or more boxes above to generate your customized schedule.</em></p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Travel Advice Section (Modal Verbs: Should / Must / Could) -->
-    <div class="advice-box">
-      <h3 style="color: #166534; margin-bottom: 0.4rem;">Travel Regulations & Recommendations</h3>
-      <p>• <strong>Must:</strong> All international travelers <strong>must</strong> present a valid passport and tourist visa upon boarding.</p>
-      <p>• <strong>Should:</strong> You <strong>should</strong> pack sturdy walking sneakers and thermal layers for the night coastal tour.</p>
-      <p>• <strong>Could:</strong> If your schedule permits, you <strong>could</strong> rent stand-up paddleboards at Huskisson pier.</p>
-    </div>
+    <!-- Travel Advice Section (Modals: Must / Should / Could) -->
+    <section class="advice-box" id="guidelines">
+      <h3 style="color: #166534; margin-bottom: 0.5rem;">Travel Agency Recommendations</h3>
+      <p>• <strong>Must:</strong> You <strong>must</strong> carry your official passport and an authorized Australian ETA visa to board all local flights.</p>
+      <p>• <strong>Should:</strong> Travelers <strong>should</strong> pack comfortable walking footwear and light jackets for late-night coastal excursions.</p>
+      <p>• <strong>Could:</strong> During your designated free hours, you <strong>could</strong> rent a stand-up paddleboard or dine along Huskisson harbor.</p>
+    </section>
 
   </main>
 
+  <!-- Footer -->
   <footer>
-    <h3>Aussie Wonders Travel Agency</h3>
-    <p>Custom Itinerary Designer • B1 English Level Final Presentation</p>
-    <p>Contact: reservations@aussiewonders.com.au</p>
+    <h3>KODA Escapes Travel Agency</h3>
+    <p>Designing unforgettable custom journeys across Australia and the world.</p>
+    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;">Created by Oswaldo Reyes, Katia Dalai & Alondra Mejía • English Project: "The Perfect Getaway"</p>
   </footer>
 
-  <!-- JavaScript for Tabs & Interactive Selection -->
+  <!-- Scripts -->
   <script>
-    function openTab(tabId) {
+    function openTab(tabId, e) {
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(el => el.classList.remove('active'));
 
@@ -446,7 +506,7 @@
       buttons.forEach(btn => btn.classList.remove('active'));
 
       document.getElementById(tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
+      e.currentTarget.classList.add('active');
     }
 
     function calculateCustom() {
@@ -467,14 +527,14 @@
 
       const summaryDiv = document.getElementById('summary-itinerary');
       if (selectedActivities.length === 0) {
-        summaryDiv.innerHTML = '<p><em>No activities selected yet. Please check one or more boxes above to generate your custom itinerary.</em></p>';
+        summaryDiv.innerHTML = '<p><em>No activities selected yet. Please check one or more boxes above to generate your customized schedule.</em></p>';
       } else {
         let html = '<h4 style="margin-bottom: 0.5rem; color: #03045e;">Your Tailored Itinerary:</h4><ul style="padding-left: 1.2rem;">';
         selectedActivities.forEach(item => {
-          html += `<li><strong>${item.day}:</strong> You are going to participate in the <em>${item.name}</em> (Cost: $${item.price} AUD).</li>`;
+          html += `<li><strong>${item.day}:</strong> You are going to enjoy the <em>${item.name}</em> ($${item.price} AUD).</li>`;
         });
         html += '</ul>';
-        html += '<p style="margin-top: 0.8rem; font-size: 0.9rem; color: #334155;"><strong>Agency Note:</strong> If you book this customized schedule today, our shuttle team will confirm all transfers immediately!</p>';
+        html += '<p style="margin-top: 0.8rem; font-size: 0.9rem; color: #334155;"><strong>Booking Notice:</strong> If you submit this custom package today, KODA Escapes will assign a dedicated travel agent immediately!</p>';
         summaryDiv.innerHTML = html;
       }
     }
